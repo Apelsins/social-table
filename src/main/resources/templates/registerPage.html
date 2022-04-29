@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Регистрация</title>
+</head>
+<body>
+<h2>Регистрация</h2>
+
+<form th:action="@{/registerUser}" method="post">
+    <label for="name">Имя</label>
+    <br/>
+    <input type="text" id="name" name="name" autofocus="autofocus"/>
+    <br/>
+    <label for="secondName">Фамилия</label>
+    <br/>
+    <input type="text" id="secondName" name="secondName"/>
+    <br/>
+    <label for="age">Возвраст</label>
+    <br/>
+    <input type="number" id="age" name="age"/>
+    <br/>
+    <label for="sex">Пол</label>
+    <br/>
+    <input type="text" id="sex" name="sex"/>
+    <br/>
+    <label for="interests">Интересы</label>
+    <br/>
+    <input type="text" id="interests" name="interests"/>
+    <br/>
+    <label for="city">Город</label>
+    <br/>
+    <input type="text" id="city" name="city"/>
+    <br/>
+    <br/>
+    <input type="submit" value="Зарегистрироваться"/>
+</form>
+
+
+</body>
+</html>
