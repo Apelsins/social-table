@@ -1,6 +1,7 @@
 package com.social.socialtable.web;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -16,8 +17,18 @@ public class ViewController {
         return "index";
     }
 
-    @RequestMapping("/registerPage")
+    @RequestMapping("/register-page")
     public String register() {
-        return "registerPage";
+        return "register-page";
+    }
+
+//    @RequestMapping("/personal-page")
+//    public String personalQuestionnaireView(Model model) {
+//        return "personal-page";
+//    }
+
+    @RequestMapping("/add-questionnaire")
+    public String addQuestionnaireView() {
+        return "add-questionnaire";
     }
 }

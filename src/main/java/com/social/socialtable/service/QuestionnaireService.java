@@ -1,17 +1,39 @@
 package com.social.socialtable.service;
 
+import com.social.socialtable.repository.QuestionnaireRepository;
+import com.social.socialtable.service.dto.Questionnaire;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class QuestionnaireService {
 
+    private final QuestionnaireRepository questionnaireRepository;
+//    private final SecurityContextHolder securityContextHolder;
 
+    public void saveAll(List<Questionnaire> questionnaires) {
+        for (Questionnaire questionnaire : questionnaires) {
+            addQuestionnaire(questionnaire);
+        }
+    }
+
+    public Long addQuestionnaire(Questionnaire questionnaire) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentUserName = authentication.getName();
+        questionnaire.setUsername(currentUserName);
+
+        return questionnaireRepository.addQuestionnaire(questionnaire);
+    }
+
+    public List<Questionnaire> getAllByUsername() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentUserName = authentication.getName();
+
+        return questionnaireRepository.getAllByUsername(currentUserName);
+    }
 }

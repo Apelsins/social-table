@@ -1,0 +1,52 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Friends</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1> Ваши друзья и их анкеты </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table table-striped">
+
+                <tbody>
+                <tr th:each="entry : ${questionnairesByFriend}">
+                    <td th:text="${entry.key}"></td>
+                    <td>
+                        <table class="table">
+                            <tr>
+                                <th> id</th>
+                                <th> Имя</th>
+                                <th> Фамилия</th>
+                                <th> Возраст</th>
+                                <th> Пол</th>
+                                <th> Интересы</th>
+                                <th> Город</th>
+                            </tr>
+                            <tr th:each="questionnaire : ${entry.value}">
+                                <td><span th:text="${questionnaire.id}"> id </span></td>
+                                <td><span th:text="${questionnaire.name}"> Имя </span></td>
+                                <td><span th:text="${questionnaire.secondName}"> Фамилия </span></td>
+                                <td><span th:text="${questionnaire.age}"> Возраст </span></td>
+                                <td><span th:text="${questionnaire.sex}"> Пол </span></td>
+                                <td><span th:text="${questionnaire.interests}"> Интересы </span></td>
+                                <td><span th:text="${questionnaire.city}"> Город </span></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <a class="btn btn-success" href="#" th:href="@{/friend/add}"> Добавить друга </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,4 +1,4 @@
-package com.social.socialtable.security;
+package com.social.socialtable.conf;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

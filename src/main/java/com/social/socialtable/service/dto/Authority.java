@@ -3,9 +3,8 @@ package com.social.socialtable.service.dto;
 import lombok.Data;
 
 @Data
-public class User {
+public class Authority {
     private Long id;
     private String username;
-    private String password;
-    private Boolean enabled;
+    private String authority;
 }
