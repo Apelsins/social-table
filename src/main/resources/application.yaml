@@ -5,8 +5,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/social
-    username: root
-    password: Super1
+    username: sammy
+    password: Super_Super_Super1
   sql:
     init:
       mode: always

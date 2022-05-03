@@ -19,7 +19,7 @@ public class RegisterController {
     @RequestMapping(value = "/register-user", method = RequestMethod.POST)
     public ResponseEntity<String> registerUser(@ModelAttribute RegisterInfo registerInfo) {
         Long userId = userService.registerUser(registerInfo);
-        return new ResponseEntity<>("Пользователь зарегистрирован " + userId, HttpStatus.OK);
+        return new ResponseEntity<>("Пользователь зарегистрирован " + userId + "\n Вернитесь и зайдите", HttpStatus.OK);
     }
 
     @GetMapping("/principal")
