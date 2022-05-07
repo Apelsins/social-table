@@ -1,16 +1,10 @@
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>All Questionnair</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-</head>
-<body>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1> Ваши анкеты (может быть много) </h1>
+            <h1> Найденные анкеты среди всех анкет (не только этого пользователя) </h1>
         </div>
         <div class="col-md-6">
-            <a class="btn btn-success" href="#" th:href="@{/friend/page}"> Ваши друзья </a>
+            <a class="btn btn-success" href="#" th:href="@{/first-and-second-name}"> Вернуться к поиску </a>
         </div>
     </div>
     <div class="row">
@@ -28,9 +22,6 @@
                 </tr>
                 </thead>
                 <tbody>
-<!--                <tr th:if="${questionnaires.empty}">-->
-<!--                    <td colspan="2"> У вас нету анкет, добавьте новую </td>-->
-<!--                </tr>-->
                 <tr th:each="questionnaire : ${questionnaires}">
                     <td><span th:text="${questionnaire.id}"> id </span></td>
                     <td><span th:text="${questionnaire.name}"> Имя </span></td>
@@ -42,12 +33,6 @@
                 </tr>
                 </tbody>
             </table>
-        </div>
-        <div class="col-md-6">
-            <a class="btn btn-success" href="#" th:href="@{/questionnaire/create}"> Добавить анкету </a>
-            <a class="btn btn-success" href="#" th:href="@{/index/addMillionRecords}"> Добавить 1000000 случайных анкет </a>
-            <a class="btn btn-success" href="#" th:href="@{/first-and-second-name}"> Поиск анкет по префиксу имени и фамилии </a>
-<!--            <a class="btn btn-primary" href="#" th:href="@{/books/edit}" th:classappend="${books.empty} ? 'disabled' : ''"> Edit Books </a>-->
         </div>
     </div>
 </div>

@@ -14,7 +14,6 @@ import java.util.List;
 public class QuestionnaireService {
 
     private final QuestionnaireRepository questionnaireRepository;
-//    private final SecurityContextHolder securityContextHolder;
 
     public void saveAll(List<Questionnaire> questionnaires) {
         for (Questionnaire questionnaire : questionnaires) {

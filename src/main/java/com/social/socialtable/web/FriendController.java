@@ -34,8 +34,6 @@ public class FriendController {
     public String saveFriend(@ModelAttribute SelectedFriend selectedFriend, Model model) {
         friendService.addNewFriend(selectedFriend.getFriendUsername());
 
-//        model.addAttribute("questionnaires", questionnaireService.getAllByUsername());
-
         return "redirect:/friend/page";
     }
 

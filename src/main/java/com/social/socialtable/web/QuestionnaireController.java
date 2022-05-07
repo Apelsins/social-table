@@ -41,15 +41,7 @@ public class QuestionnaireController {
     public String saveBooks(@ModelAttribute QuestionnairesCreationDto form, Model model) {
         questionnaireService.saveAll(form.getQuestionnaires());
 
-//        model.addAttribute("questionnaires", questionnaireService.getAllByUsername());
-
         return "redirect:/questionnaire/personal-page";
     }
-
-//    @PostMapping
-//    public ResponseEntity<String> registerUser(@ModelAttribute Questionnaire questionnaire) {
-//        questionnaireService.addQuestionnaire(questionnaire);
-//        return new ResponseEntity<>("", HttpStatus.OK);
-//    }
 
 }
