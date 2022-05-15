@@ -4,9 +4,9 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/social
-    username: sammy
-    password: Super_Super_Super1
+    url: jdbc:mysql://localhost:6033/sbtest
+    username: root
+    password: password
   sql:
     init:
       mode: always

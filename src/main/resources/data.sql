@@ -30,34 +30,26 @@ values ('user2', 'ROLE_USER');
 INSERT INTO authorities (username, authority)
 values ('user3', 'ROLE_USER');
 
-INSERT INTO social.questionnaire
+INSERT INTO questionnaire
 (id, username, name, second_name, age, sex, interests, city)
-VALUES(1, 'user1', 'Коля', 'Петров', 21, 'М', 'Рисование', 'Москва');
+VALUES(1, 'user1', 'Kola', 'Petrov', 21, 'M', 'Painting', 'Moscow');
 
-INSERT INTO social.questionnaire
+INSERT INTO questionnaire
 (id, username, name, second_name, age, sex, interests, city)
-VALUES(2, 'user1', 'Петр', 'Иванов', 32, 'М', 'Стрельба', 'Калуга');
+VALUES(2, 'user1', 'Petr', 'Ivanov', 32, 'M', 'Guns', 'Kaluga');
 
-INSERT INTO social.questionnaire
+INSERT INTO questionnaire
 (id, username, name, second_name, age, sex, interests, city)
-VALUES(3, 'user2', 'Олег', 'Куплинов', 31, 'М', 'Фехтование', 'Вашингтон');
+VALUES(3, 'user2', 'Oleg', 'Kuplinov', 31, 'M', 'Cars', 'New York');
 
-INSERT INTO social.questionnaire
+INSERT INTO questionnaire
 (id, username, name, second_name, age, sex, interests, city)
-VALUES(4, 'user2', 'Петр', 'Куплинов', 65, 'М', 'Машины', 'Прага');
+VALUES(6, 'user3', 'Oleg', 'Kuplinov', 33, 'W', 'Cars', 'York');
 
-INSERT INTO social.questionnaire
-(id, username, name, second_name, age, sex, interests, city)
-VALUES(5, 'user2', 'Олег', 'Иванов', 43, 'Ж', 'Фехтование', 'Афины');
-
-INSERT INTO social.questionnaire
-(id, username, name, second_name, age, sex, interests, city)
-VALUES(6, 'user3', 'Олег', 'Петров', 33, 'Ж', 'Стрельба', 'Киров');
-
-INSERT INTO social.friends
+INSERT INTO friends
 (user_id, friend_id)
 VALUES(2, 1);
 
-INSERT INTO social.friends
+INSERT INTO friends
 (user_id, friend_id)
 VALUES(2, 3);

@@ -22,13 +22,13 @@ public class IndexService {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String currentUserName = authentication.getName();
         Random random = new Random();
-        for (int counter = 0; counter < 1000000; counter++) {
+        for (int counter = 0; counter < 10000; counter++) {
             Questionnaire questionnaire = new Questionnaire();
             questionnaire.setUsername(currentUserName);
             questionnaire.setName(RandomStringUtils.random(10, true, false));
             questionnaire.setSecondName(RandomStringUtils.random(10, true, false));
             questionnaire.setAge(random.nextInt(100));
-            questionnaire.setSex(RandomStringUtils.random(1, "МЖ"));
+            questionnaire.setSex(RandomStringUtils.random(1, "MW"));
             questionnaire.setInterests(RandomStringUtils.random(10, true, false));
             questionnaire.setCity(RandomStringUtils.random(10, true, false));
             questionnaireRepository.addQuestionnaire(questionnaire);
